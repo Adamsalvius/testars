@@ -6,7 +6,18 @@ import "./App.css";
 
 const server = "https://testing-backends.herokuapp.com";
 let socket;
-
+const getTime = () => {
+  const timern = new Date();
+  const date =
+    timern.getFullYear() + 
+    "/" + 
+    (timern.getMonth() + 1) + 
+    "/" + timern.getDate();
+  const time =
+    timern.getHours() + ":" + timern.getMinutes() + ":" + timern.getSeconds();
+  const dateTime = date + " " + time;
+  return dateTime;
+};
 
 function App() {
   const [init, setInit] = useState("");
@@ -20,18 +31,6 @@ function App() {
   const [room, setRoom] = useState("");
 
   const messageRef = useRef();
-  const getTime = () => {
-    const timern = new Date();
-    const date =
-      timern.getFullYear() + 
-      "/" + 
-      (timern.getMonth() + 1) + 
-      "/" + timern.getDate();
-    const time =
-      timern.getHours() + ":" + timern.getMinutes() + ":" + timern.getSeconds();
-    const dateTime = date + " " + time;
-    return dateTime;
-  };
 
   useEffect(() => {
     if (messageRef.current) {

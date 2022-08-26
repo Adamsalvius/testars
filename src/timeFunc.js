@@ -1,11 +1,11 @@
 export const getTime = () => {
-    const today = new Date();
+    const timern = new Date();
     const date =
-      today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
+      timern.getFullYear() + "/" + (timern.getMonth() + 1) + "/" + timern.getDate();
     const time =
-      today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      timern.getHours() + ":" + timern.getMinutes() + ":" + timern.getSeconds();
     const dateTime = date + " " + time;
     return dateTime;
   };
   
-  // Stulet av Nils
+  

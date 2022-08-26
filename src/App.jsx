@@ -1,21 +1,34 @@
 import { useState, useEffect, useRef } from "react";
 import { io } from "socket.io-client";
 import "./App.css";
-import { getTime } from "./timeFunc";
+/* import { getTime } from "./timeFunc"; */
+
 
 const server = "https://testing-backends.herokuapp.com";
 let socket;
+const getTime = () => {
+  const timern = new Date();
+  const date =
+    timern.getFullYear() + 
+    "/" + 
+    (timern.getMonth() + 1) + 
+    "/" + timern.getDate();
+  const time =
+    timern.getHours() + ":" + timern.getMinutes() + ":" + timern.getSeconds();
+  const dateTime = date + " " + time;
+  return dateTime;
+};
 
 function App() {
   const [init, setInit] = useState("");
+  const [roomInput, setRoomInput] = useState("");
   const [user, setUser] = useState("");
   const [username, setUsername] = useState("");
   const [input, setInput] = useState("");
+  const [date, setDate] = useState();
   const [messages, setMessages] = useState([]);
   const [rooms, setRooms] = useState([]);
   const [room, setRoom] = useState("");
-  const [roomInput, setRoomInput] = useState("");
-  const [date, setDate] = useState();
 
   const messageRef = useRef();
 
@@ -46,7 +59,7 @@ function App() {
 
     socket.on("user_created", (data) => {
       setUser(data);
-      console.log(`Logged in as ${data}`);
+      console.log(`signed in as ${data}`);
     });
 
     socket.on("user_error", (data) => {
@@ -187,10 +200,9 @@ function App() {
             onKeyDown={(e) => {
               if (e.key === "Enter") loginUser();
             }}
-            placeholder="Username"
             className="username"
+            placeholder="Username"
             value={username}
-            autoComplete="off"
             onChange={(e) => setUsername(e.target.value)}
           />
           <button onClick={() => loginUser()}>Login</button>

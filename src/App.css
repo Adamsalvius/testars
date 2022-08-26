@@ -43,9 +43,8 @@ button {
 
 .messages {
   display: flexbox;
-  border: 1px solid rgb(184, 184, 184);
-  height: 80vh;
-  width: 80vw;
+  height: 40vh;
+  width: 40vw;
   overflow: scroll;
   padding: 0;
   list-style-type: none; margin: 0; padding: 0;
@@ -63,12 +62,12 @@ button {
   background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); 
 }
 
-.messageForm > button {
-  background: rgb(206, 206, 206); border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff;
-}
+ .messageForm > button {
+  background: rgb(206, 206, 206); border: none; padding: 2rem; margin: 20px;   color: rgb(0, 0, 0);
+} 
 
 .messageInput {
-  border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem;
+  padding: 0 1rem; flex-grow: 1; 
 }
 
 .currentRoom {

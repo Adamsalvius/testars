@@ -208,10 +208,9 @@ function App() {
             onKeyDown={(e) => {
               if (e.key === "Enter") addUser();
             }}
-            placeholder="Username..."
+            placeholder="Username"
             className="username"
             value={username}
-            autoComplete="off"
             onChange={(e) => setUsername(e.target.value)}
           />
           <button onClick={() => addUser()}>Register</button>

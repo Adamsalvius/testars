@@ -3,7 +3,7 @@ import { io } from "socket.io-client";
 import "./App.css";
 import { getTime } from "./timeFunc";
 
-const server = "backend.herokuapp.com";
+const server = "https://testing-backends.herokuapp.com";
 // const server = "localhost:666";
 let socket;
 

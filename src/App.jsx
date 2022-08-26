@@ -63,24 +63,24 @@ function App() {
       console.log(data);
     });
 
-    socket.on("room_created", (data) => {
+    socket.on("chatroom_created", (data) => {
       setRoom(data);
     });
 
-    socket.on("room_error", (data) => {
+    socket.on("chatroom_err", (data) => {
       console.log(data);
     });
 
-    socket.on("error_remove_room", (data) => {
+    socket.on("err_delete_chatroom", (data) => {
       console.log(data);
     });
-    socket.on("welcome_to_room", (data) => {
+    socket.on("welcome_user", (data) => {
       setMessages(data[0]);
       setRoom(data[1]);
     });
 
     socket.on("disconnect", () => {
-      console.log("Disconnected from server");
+      console.log("disconnected");
     });
 
     socket.on("new_message", (data) => {
@@ -125,7 +125,7 @@ function App() {
   }
 
   function addUser() {
-    if (username) socket.emit("create_user", username);
+    if (username) socket.emit("register_user", username);
   }
 
   function loginUser() {
@@ -151,17 +151,17 @@ function App() {
   }
 
   function leaveRoom(roomName) {
-    socket.emit("leave_room", roomName);
+    socket.emit("chatroom_leave", roomName);
     setRoom("");
     setMessages([]);
   }
 
   function getRooms() {
-    socket.emit("get_rooms");
+    socket.emit("get_chatrooms");
   }
 
   function removeRoom(roomName) {
-    socket.emit("remove_room", roomName);
+    socket.emit("delete_chatroom", roomName);
   }
 
   useEffect(() => {
@@ -188,7 +188,7 @@ function App() {
             onKeyDown={(e) => {
               if (e.key === "Enter") loginUser();
             }}
-            placeholder="Username..."
+            placeholder="Username"
             className="username"
             value={username}
             autoComplete="off"
@@ -222,11 +222,11 @@ function App() {
     return (
       <div className="App">
         <header className="App-header">
-          <div className="headerboii">
-            <h4 className="currentUser">
+          <div >
+            <h2 className="currentUser">
               welcome! {user}
               <button onClick={() => logoutUser()}>Leave</button>
-            </h4>
+            </h2>
           </div>
           <div className="control">
             <input
@@ -234,17 +234,17 @@ function App() {
               onKeyDown={(e) => {
                 if (e.key === "Enter") joinRoom(roomInput);
               }}
-              /* tabIndex="0" */
+              
               placeholder="Enter roomname"
               className="Roominput"
               value={roomInput}
-              /* autoComplete="off" */
+            
               onChange={(e) => setRoomInput(e.target.value)}
             />
             <button onClick={() => joinRoom(roomInput)}>Join</button>
             <button onClick={() => createRoom(roomInput)}>Create</button>
           </div>
-          {/* <button onClick={() => getRooms()}>Show available rooms</button> */}
+          
 
           <ul className="currentRooms">
             {rooms.map((room) => {
@@ -264,13 +264,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <input
-            className="socketId"
-            value={socketId}
-            onChange={(e) => setSocketId(e.target.value)}
-          />
-          <button onClick={handleDM}>Skicka direktmeddelande</button> */}
-        <div className="headerboii">
+        
+        <div>
           <h4 className="currentRoom">
             you're in "{room}", {user}
             <button onClick={() => leaveRoom(room)}>Leave</button>
@@ -281,9 +276,9 @@ function App() {
          
             return (
               <li key={message.date} ref={messageRef} className="message">
-                <h4>{message.user} wrote:</h4>
-                <h2>{message.message}</h2>
-                <h5>{message.date}</h5>
+                <h3>{message.user} wrote:</h3>
+                <h1>{message.message}</h1>
+                <h4>{message.date}</h4>
               </li>
             );
           })}

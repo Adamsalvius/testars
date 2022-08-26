@@ -101,7 +101,7 @@ button {
   font-size: 10px;
   text-decoration: none;
 }
-
+.username { margin-bottom: 1rem;}
 .currentUser {
   display: flex;
   justify-content: space-between;

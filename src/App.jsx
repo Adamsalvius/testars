@@ -242,17 +242,17 @@ function App() {
               autoComplete="off"
               onChange={(e) => setRoomInput(e.target.value)}
             />
-            <button onClick={() => joinRoom(roomInput)}>Join room</button>
-            <button onClick={() => createRoom(roomInput)}>Create room</button>
+            <button onClick={() => joinRoom(roomInput)}>Join</button>
+            <button onClick={() => createRoom(roomInput)}>Create</button>
           </div>
-          <button onClick={() => getRooms()}>Show available rooms</button>
+          {/* <button onClick={() => getRooms()}>Show available rooms</button> */}
 
           <ul className="currentRooms">
             {rooms.map((room) => {
               return (
                 <li key={room.name} className="room">
                   {room.name}{" "}
-                  <button onClick={() => removeRoom(room.name)}>X</button>
+                  <button onClick={() => removeRoom(room.name)}>🗑️</button>
                 </li>
               );
             })}

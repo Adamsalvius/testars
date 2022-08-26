@@ -225,8 +225,8 @@ function App() {
         <header className="App-header">
           <div className="headerboii">
             <h4 className="currentUser">
-              Logged in as {user}
-              <button onClick={() => logoutUser()}>Logout</button>
+              welcome! {user}
+              <button onClick={() => logoutUser()}>Leave</button>
             </h4>
           </div>
           <div className="inputRoom">
@@ -273,7 +273,7 @@ function App() {
           <button onClick={handleDM}>Skicka direktmeddelande</button> */}
         <div className="headerboii">
           <h4 className="currentRoom">
-            Chatting in room "{room}" as {user}
+            you're in "{room}", {user}
             <button onClick={() => leaveRoom(room)}>Leave</button>
           </h4>
         </div>

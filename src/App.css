@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #e6e6e6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #575757;
 }
 
 @keyframes App-logo-spin {
@@ -43,7 +43,7 @@ button {
 
 .messages {
   display: flexbox;
-  border: 1px solid black;
+  border: 1px solid rgb(184, 184, 184);
   height: 80vh;
   width: 80vw;
   overflow: scroll;
@@ -56,7 +56,7 @@ button {
 }
 
 .messages > li:nth-child(odd) {
-  background: #6e4949;
+  background: #a3a3a3;
 }
 
 .messageForm {
@@ -64,7 +64,7 @@ button {
 }
 
 .messageForm > button {
-  background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff;
+  background: rgb(206, 206, 206); border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff;
 }
 
 .messageInput {
@@ -77,7 +77,7 @@ button {
   position: sticky;
   top: 0;
   margin-top: 0;
-  background-color: rgb(16, 19, 18);
+  background-color: rgb(238, 238, 238);
   width: 90vw;
   height: 40px;
 }

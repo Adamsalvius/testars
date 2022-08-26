@@ -172,8 +172,8 @@ function App() {
     return (
       <div className="App">
         <header className="App-header">
-          <button onClick={() => login()}>Login</button>
-          <button onClick={() => createUser()}>Create user</button>
+          <button className="login" onClick={() => login()}>Login</button>
+          <button className="login" onClick={() => createUser()}>Register</button>
         </header>
       </div>
     );
@@ -214,7 +214,7 @@ function App() {
             autoComplete="off"
             onChange={(e) => setUsername(e.target.value)}
           />
-          <button onClick={() => addUser()}>Create</button>
+          <button onClick={() => addUser()}>Register</button>
         </header>
       </div>
     );
@@ -292,12 +292,11 @@ function App() {
 
         <div className="messageForm">
           <input
-            autoFocus
+           
             onKeyDown={(e) => {
               if (e.key === "Enter") handleMessage();
             }}
             className="messageInput"
-            autoComplete="off"
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />

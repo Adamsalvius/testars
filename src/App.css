@@ -118,7 +118,7 @@ button {
   margin-left: 10px;
 }
 
-.inputRoom {
+.control {
   border: 1px solid white;
   display: flex;
   justify-content: space-between;
@@ -126,6 +126,6 @@ button {
   top: 100px;
 }
 
-.Roomname {
+.Roominput {
   font-size: 20px;
 }

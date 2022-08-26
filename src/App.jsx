@@ -229,17 +229,17 @@ function App() {
               <button onClick={() => logoutUser()}>Leave</button>
             </h4>
           </div>
-          <div className="inputRoom">
+          <div className="control">
             <input
               autoFocus
               onKeyDown={(e) => {
                 if (e.key === "Enter") joinRoom(roomInput);
               }}
-              tabIndex="0"
-              placeholder="Roomname..."
-              className="Roomname"
+              /* tabIndex="0" */
+              placeholder="Enter roomname"
+              className="Roominput"
               value={roomInput}
-              autoComplete="off"
+              /* autoComplete="off" */
               onChange={(e) => setRoomInput(e.target.value)}
             />
             <button onClick={() => joinRoom(roomInput)}>Join</button>
@@ -279,18 +279,10 @@ function App() {
         </div>
         <ul className="messages">
           {messages.map((message) => {
-            // if (!message.user_name) {
-            //   return (
-            //     <li className="message">
-            //       <h4>{message.user} You say:</h4>
-            //       <h2>{message.message}</h2>
-            //       <h5>{message.date}</h5>
-            //     </li>
-            //   );
-            // } else {
+         
             return (
               <li key={message.date} ref={messageRef} className="message">
-                <h4>{message.user} says:</h4>
+                <h4>{message.user} wrote:</h4>
                 <h2>{message.message}</h2>
                 <h5>{message.date}</h5>
               </li>

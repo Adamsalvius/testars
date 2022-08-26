@@ -28,23 +28,18 @@
   color: #575757;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+ul{
+list-style-type: none ;
 }
-ul{list-style-type: none ;}
 button {
   font-size: calc(10px + 2vmin);
 }
 
 .messages {
   display: flexbox;
-  height: 40vh;
-  width: 40vw;
+  height: 80vh;
+  width: 80vw;
   overflow: scroll;
   padding: 0;
   list-style-type: none; margin: 0; padding: 0;
@@ -54,16 +49,14 @@ button {
   padding: 0.5rem 1rem;
 }
 
-.messages > li:nth-child(odd) {
-  background: #a3a3a3;
-}
+
 
 .messageForm {
   background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); 
 }
 
  .messageForm > button {
-  background: rgb(206, 206, 206); border: none; padding: 2rem; margin: 20px;   color: rgb(0, 0, 0);
+  background: rgb(206, 206, 206); border: none;   color: rgb(0, 0, 0);
 } 
 
 .messageInput {

@@ -4,7 +4,6 @@ import "./App.css";
 import { getTime } from "./timeFunc";
 
 const server = "https://testing-backends.herokuapp.com";
-// const server = "localhost:666";
 let socket;
 
 function App() {
@@ -278,7 +277,7 @@ function App() {
               <li key={message.date} ref={messageRef} className="message">
                 <h3>{message.user} wrote:</h3>
                 <h1>{message.message}</h1>
-                <h4>{message.date}</h4>
+                <p>{message.date}</p>
               </li>
             );
           })}
